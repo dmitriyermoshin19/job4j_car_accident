@@ -28,14 +28,26 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">Строка</th>
+                        <th scope="col">Номер</th>
+                        <th scope="col">Название</th>
+                        <th scope="col">Описание</th>
+                        <th scope="col">Адрес</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${strings}" var="string">
+                    <c:forEach items="${accidents}" var="accident">
                         <tr>
                             <td>
-                                <c:out value="${string}"/>
+                                <c:out value="${accident.id}"/>
+                            </td>
+                            <td>
+                                <c:out value="${accident.name}"/>
+                            </td>
+                            <td>
+                                <c:out value="${accident.text}"/>
+                            </td>
+                            <td>
+                                <c:out value="${accident.address}"/>
                             </td>
                         </tr>
                     </c:forEach>
