@@ -67,4 +67,14 @@ public class Accident {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        return "Accident{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", text='" + text + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

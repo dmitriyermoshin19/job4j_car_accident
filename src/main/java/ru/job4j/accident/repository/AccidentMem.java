@@ -3,15 +3,15 @@ package ru.job4j.accident.repository;
 import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.Accident;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AccidentMem {
-
-    private final Map<Integer, Accident> accidents = new HashMap<>();
+    private static final AccidentMem INST = new AccidentMem();
+    private final Map<Integer, Accident> accidents = new ConcurrentHashMap<>();
+    private final AtomicInteger idx = new AtomicInteger(4);
 
     private AccidentMem() {
         Accident first = Accident.of("First", "Поцарапан бампер", "Minsk");
@@ -25,7 +25,16 @@ public class AccidentMem {
         accidents.put(3, third);
     }
 
-    public List<Accident> getAllAccidents() {
-        return new ArrayList<>(accidents.values());
+    public static AccidentMem instOf() {
+        return INST;
+    }
+
+    public Object getAllAccidents() {
+        return accidents.values();
+    }
+
+    public void create(Accident accident) {
+        accident.setId(idx.getAndIncrement());
+        accidents.put(accident.getId(), accident);
     }
 }

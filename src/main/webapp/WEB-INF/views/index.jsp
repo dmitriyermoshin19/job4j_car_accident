@@ -19,10 +19,11 @@
 </head>
 <body>
 <div class="container">
+    <a href="<c:url value='/create'/>">Добавить инцидент</a>
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
-                Перечень строк
+                Онлайн-страница для отображения и создания инцидентов на дороге
             </div>
             <div class="card-body">
                 <table class="table">
