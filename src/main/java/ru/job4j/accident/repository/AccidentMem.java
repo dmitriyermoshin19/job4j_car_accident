@@ -9,7 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AccidentMem {
-    private static final AccidentMem INST = new AccidentMem();
     private final Map<Integer, Accident> accidents = new ConcurrentHashMap<>();
     private final AtomicInteger idx = new AtomicInteger(4);
 
@@ -25,16 +24,18 @@ public class AccidentMem {
         accidents.put(3, third);
     }
 
-    public static AccidentMem instOf() {
-        return INST;
-    }
-
     public Object getAllAccidents() {
         return accidents.values();
     }
 
     public void create(Accident accident) {
-        accident.setId(idx.getAndIncrement());
+        if (accident.getId() == 0) {
+            accident.setId(idx.getAndIncrement());
+        }
         accidents.put(accident.getId(), accident);
+    }
+
+    public Accident findById(int id) {
+        return accidents.get(id);
     }
 }
