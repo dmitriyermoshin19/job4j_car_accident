@@ -42,10 +42,12 @@ public class AccidentMem {
         return accidents.values();
     }
 
-    public void create(Accident accident) {
+    public void create(Accident accident, String[] ids) {
         if (accident.getId() == 0) {
             accident.setId(idx.getAndIncrement());
         }
+        accident.setType(findTypeById(accident.getType().getId()));
+        accident.setRules(getSetRules(ids));
         accidents.put(accident.getId(), accident);
     }
 

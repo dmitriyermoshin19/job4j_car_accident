@@ -61,7 +61,7 @@
                             <c:forEach items="${accident.rules}" var="rule">
                                 <c:out value="${rule.name}"/>
                             </c:forEach>
-                            <select class="form-control" name="rIds" id="rIds" multiple>
+                            <select class="form-control" name="rIds" id="rIds" multiple required>
                                 <c:forEach var="rule" items="${allRules}">
                                     <option value="${rule.id}">${rule.name}</option>
                                 </c:forEach>

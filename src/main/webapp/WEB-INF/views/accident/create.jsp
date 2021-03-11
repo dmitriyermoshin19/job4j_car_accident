@@ -28,19 +28,19 @@
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3" for="name" style="font-weight: 900">Название инцидента</label>
                         <div class="col-sm-5">
-                            <input type='text' class="form-control" name='name' id="name">
+                            <input type='text' class="form-control" name='name' id="name" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3" for="text" style="font-weight: 900">Описание инцидента</label>
                         <div class="col-sm-5">
-                            <input type='text' class="form-control" name='text' id="text">
+                            <input type='text' class="form-control" name='text' id="text" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3" for="address" style="font-weight: 900">Адрес инцидента</label>
                         <div class="col-sm-5">
-                            <input type='text' class="form-control" name='address' id="address">
+                            <input type='text' class="form-control" name='address' id="address" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -56,7 +56,7 @@
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3" for="rIds" style="font-weight: 900">Статьи инцидента</label>
                         <div class="col-sm-5">
-                            <select class="form-control" name="rIds" id="rIds" multiple>
+                            <select class="form-control" name="rIds" id="rIds" multiple required>
                                 <c:forEach var="rule" items="${allRules}">
                                     <option value="${rule.id}">${rule.name}</option>
                                 </c:forEach>
