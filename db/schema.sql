@@ -24,3 +24,9 @@ address varchar(500),
 type_id integer references types(id),
 rIds varchar(10)[]
 );
+
+CREATE TABLE accident_rules (
+id serial primary key,
+accident_id serial,
+rules_id serial
+);
