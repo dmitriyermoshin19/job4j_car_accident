@@ -11,7 +11,7 @@ import ru.job4j.accident.model.Rule;
 import javax.persistence.EntityManager;;
 import java.util.*;
 
-@Repository
+//@Repository
 public class AccidentHibernate {
 
     private final SessionFactory sf;
