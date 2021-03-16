@@ -19,7 +19,18 @@
 </head>
 <body>
 <div class="container">
-    <a href="<c:url value='/create'/>">Добавить инцидент</a>
+    <div class="row">
+        <ul class="nav">
+            <li class="nav-item" style="font-weight: bold">
+                <a class="nav-link" href="<c:url value="/create"/>">Добавить инцидент</a>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li class="nav-item" style="font-weight: bold">
+                <a class="nav-link" href="<c:url value="/logout"/>"><c:out value="${user.username}"/> | Выйти из системы</a>
+            </li>
+        </ul>
+    </div>
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
