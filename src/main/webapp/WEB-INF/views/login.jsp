@@ -29,6 +29,13 @@
 </div>
 <div class="container pt-2">
     <div class="row">
+        <ul class="nav">
+            <li class="nav-item" style="font-weight: bold">
+                <a class="nav-link" href="<c:url value="/reg"/>">Регистрация</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
         <div class="card" style="width: 40%">
             <div class="card-header" style="font-weight: bold; font-size: larger">
                 Авторизация
